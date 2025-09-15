@@ -1,0 +1,61 @@
+.Container{
+    width: 25rem;
+    height: 50rem;
+    background-color: #EDEDED;
+    position: absolute;
+    top: 10rem;
+    right: 1rem;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Container .FormHeader {
+    width:100%;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:start ;
+    align-items: center;
+    gap: 1rem;
+}
+.Container .FormHeader p{
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+}
+.Container  form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 4rem;
+}
+.Container  form input {
+    display: block;
+    width: 19rem;
+    height: 3.5rem;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    /* border: 2px solid #ccc; */
+}
+.Container form button{
+    width: 19rem;
+    height: 3rem;
+    background-color: #DF6951;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+/* .invalid{
+    background-color: #ff7255;
+    border: 1px solid red;
+    color: #fff;
+} */
+
+.Container form button:disabled{
+    background-color: gray;
+    color: black;
+    cursor: not-allowed;
+}

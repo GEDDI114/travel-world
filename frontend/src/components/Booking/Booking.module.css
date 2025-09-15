@@ -1,0 +1,85 @@
+
+.HeaderContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.Logo{
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    /* color: #fff; */
+}
+.ContainerAll{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.HeadContainer {
+  position: relative;
+  height: 44rem;
+  background: url("../../Assets/This tiny Maldives island offers the same paradise views as $1,000 resorts for just $50 a night (surfers call it _the jewel of the Indian Ocean_).jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10rem;
+}
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.Logo {
+  font-size: 1.3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  /* color: #fff; */
+}
+.HeaderDescription {
+  margin-top: 3rem;
+  /* background-color: aqua; */
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.HeaderDescription h1 {
+  font-size: 3rem;
+  font-family: Volkhov;
+}
+.HeaderDescription p {
+  text-align: center;
+  line-height: 28px;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: mulish;
+  /* color: #fff; */
+}
+
+.OuterContainer {
+  position: absolute;
+  width: 60rem;
+  height: 40rem;
+  background-color: #fff;
+  bottom: -30rem;
+  left: 16.7rem;
+  /* padding: 1.6rem; */
+}
+.BookingContainer{
+    position: relative;
+}
+.Footer{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0%;
+    /* background-color: antiquewhite; */
+    top: 140rem;
+}
