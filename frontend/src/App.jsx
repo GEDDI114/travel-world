@@ -13,6 +13,7 @@ import UserBooking from "./components/UserBooking/UserBooking";
 import Package from "./components/Ourpackge/Package";
 import CartPage from "./components/CartPage/CartPage";
 import { useState } from "react";
+import About from "./components/ourAboutUs/AboutUS";
 // import TotalDashbord from "./components/Home/Dashbord/TotalDashbord/TotalDashbord";
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/userBooking" element={<UserBooking />} />
           <Route path="/ourpacakge" element={<Package />} />
           <Route path="/cartPage" element={<CartPage />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </>

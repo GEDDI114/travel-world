@@ -1,4 +1,6 @@
 import React from "react";
+
+import { useContext } from "react";
 import PagkageStyle from "./TourCards.module.css";
 
 import AustraliaLogo from "../../../Assets/Australia.png";
@@ -10,8 +12,11 @@ import BrazilianImage from "../../../Assets/Brazil.png";
 import EgyptImage from "../../../Assets/EgyptImage.png";
 
 import TourCard from "./TourPagkage/TourCard";
+import Auth from "../../../store/ContextAuth/Auth";
 
 const TourCards = () => {
+   const ctx = useContext(Auth);
+
   const Pagkages = [
     {
       country: "Australia",
@@ -29,11 +34,16 @@ const TourCards = () => {
       logo: BrazilLogo,
     },
   ];
+
+ 
+  
+  
+
   return (
     <>
       <div className={PagkageStyle.container}>
-        {Pagkages.map((card) => {
-          return <TourCard background={card.image} logo={card.logo} />;
+        {Pagkages.map((card,idx) => {
+            return <TourCard country={ctx.Countries[idx].countries} OldPrice={ctx.Countries[idx].OldPrice} Discount={ctx.Countries[idx].Discount} background={card.image} logo={card.logo} Content={ctx.Countries[idx].Content} />;
         })}
       </div>
     </>

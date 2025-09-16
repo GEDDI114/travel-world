@@ -9,7 +9,7 @@ const Dashbord = () => {
 
   const ctx = useContext(Auth)
 
-  // console.log(ctx.login);
+  
   
   return (
     <>
@@ -23,9 +23,10 @@ const Dashbord = () => {
             <i className="fa-solid fa-home"></i> Home
           </li>
           </NavLink> 
+          <NavLink to="/TotalBooking">
           <li>
             <i className="fa-solid fa-plane"></i> Bookings
-          </li>
+          </li></NavLink>
           <Link to="/AddBooking">
             <li>
               <i className="fa-solid fa-add"></i> Add Booking
@@ -40,6 +41,9 @@ const Dashbord = () => {
           </li>
           <li>
             <i className="fa-solid fa-chart-line"></i> Analytics
+          </li>
+          <li>
+            <button onClick={() => ctx.setLogin(false)}>Logout</button>
           </li>
         </ul>
       </div>

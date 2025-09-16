@@ -3,7 +3,15 @@ import img1 from "../../../Assets/AustraliaImage.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 const DisplayProduct = () => {
+
+
+  const navigate = useNavigate()
+
+
   const [data, setData] = useState([]);
 
   const HandalReadData = () => {
@@ -46,7 +54,7 @@ const DisplayProduct = () => {
               Nam exercitationem commodi et ducimus quia in dolore animi sit
               mollitia...
             </p>
-            <button>Book now</button>
+            <NavLink to="/booking"> <button >Book now</button></NavLink>
           </div>
         </div>
       ))}

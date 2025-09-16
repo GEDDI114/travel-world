@@ -154,3 +154,97 @@
     position: absolute;
     
 } */
+
+@media (max-width: 768px) {
+  .FooterSections {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .FooterContainer .FooterSections .FooterSection1 {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .FooterContainer .FooterSections .FooterSection1 .Language input {
+    width: 100%;
+  }
+
+  .FooterContainer .FooterSections .FooterSection1 .Company,
+  .FooterContainer .FooterSections .FooterSection1 .Help,
+  .FooterContainer .FooterSections .FooterSection1 .Payment {
+    width: 48%;
+    height: auto;
+  }
+
+  .FooterContainer .FooterSections .FooterSection1 .Payment .PaymentImages {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .FooterSections {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .FooterContainer {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .FooterSection1 {
+    width: 100% !important;
+    height: auto !important;
+    padding: 1rem 0 !important;
+  }
+
+  .FooterSection1 .Language input {
+    width: 100%;
+  }
+
+  .FooterSection1 .Company,
+  .FooterSection1 .Help,
+  .FooterSection1 .Payment {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0.5rem 0;
+  }
+
+  .FooterSection1 .Payment .PaymentImages {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .FooterSection1 .Payment .PaymentImages img {
+    width: 45px;
+    height: auto;
+  }
+
+  .FooterSection1 .Company ul,
+  .FooterSection1 .Help ul {
+    gap: 10px;
+  }
+
+  .FooterSection1 .Company ul h1,
+  .FooterSection1 .Help ul h1,
+  .FooterSection1 .Payment h1 {
+    font-size: 1.1rem;
+  }
+
+  .FooterSection1 .Company ul li,
+  .FooterSection1 .Help ul li,
+  .FooterSection1 .Payment p {
+    font-size: 0.9rem;
+  }
+}

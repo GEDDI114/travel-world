@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookingInfoStyle from "./BookingInformation.module.css";
 import Image1 from "../../../Assets/imag1.png.png";
 import Image2 from "../../../Assets/imag2.png.png";
@@ -7,13 +7,17 @@ import Image4 from "../../../Assets/imag4.png.png";
 import Image5 from "../../../Assets/imag5.png.png";
 import Image6 from "../../../Assets/imag6.png.png";
 import Fly from '../../../Assets/Fly.png'
+import Auth from "../../../store/ContextAuth/Auth";
 const BookingInformation = () => {
+
+
+  const ctx = useContext(Auth)
   return (
     <>
       <div className={BookingInfoStyle.Conatiner}>
         <div className={BookingInfoStyle.CountryAndPrice}>
           <div className={BookingInfoStyle.CountryrReview}>
-            <h1>Switzerland</h1>
+            <h1>{ctx.CurrentBooking.Country}</h1>
             <div className={BookingInfoStyle.Review}>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -26,7 +30,7 @@ const BookingInformation = () => {
             </div>
           </div>
           <div className={BookingInfoStyle.PriceContainer}>
-            <p className={BookingInfoStyle.Price}>1,000$</p>
+            <p className={BookingInfoStyle.Price}>{ctx.CurrentBooking.Price}$</p>
             <p className={BookingInfoStyle.PerCouble}>
               {" "}
               <span>/</span> Per Couple{" "}

@@ -14,11 +14,18 @@ const UserBooking = () => {
     useEffect(()=>{
         HandalReadDataUser()
     },[])
+
+    const HandalDelete=(id)=>{
+      axios.delete(`http://localhost:9007/deleteuser/${id}`)
+      alert("Sucess Delete")
+      HandalReadDataUser()
+
+    }
   return (
     <div className="table-page">
       <Dashbord />
       <div className="table-wrapper">
-        <h2 className="table-title">Booking List</h2>
+        <h2 className="table-title">User List</h2>
         <table className="styled-table">
           <thead>
             <tr>
@@ -28,6 +35,7 @@ const UserBooking = () => {
               <th>Name</th>
               <th>Phone</th>
               <th>Emal</th>
+              <th>Country</th>
               <th>Number_Of_ticket</th>
              
               <th>Action</th>
@@ -44,14 +52,16 @@ const UserBooking = () => {
                   <td>{item.name}</td>
                   <td>{item.phone}</td>
                   <td>{item.email}</td>
+                  <td>{item.location}</td>
                   <td>{item.ticket}</td>
+                  
                  
                   <td className="actions">
                     
                   
-                      <i className="fa-solid fa-pen-to-square edit-icon"></i>{" "}
+                     
                   
-                    <i
+                    <i onClick={()=> HandalDelete(item._id)}
                     
                       className="fa-solid fa-trash delete-icon"
                     ></i>

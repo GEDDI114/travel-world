@@ -1,8 +1,29 @@
+import { useContext } from "react";
 import TourCardsStyle from "./TourCard.module.css";
+import Auth from "../../../../store/ContextAuth/Auth";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const TourCard = (props) => {
   
-  // const
+
+  const navigate = useNavigate()
+  const ctx = useContext(Auth)
+
+  const OnSubmit = (e) => {
+    e.preventDefault();
+
+    const NewBooking ={
+      Country : props.country,
+      Price : props.Discount
+    } 
+
+    ctx.setCurrentBooking(NewBooking)
+
+    navigate('./booking')
+
+  }
 
   return (
     <>
@@ -35,7 +56,7 @@ const TourCard = (props) => {
           </div>
         </div>
         <div className={TourCardsStyle.CountryAndReviews}>
-          <h1>Australia</h1>
+          <h1>{props.country}</h1>
           <div className={TourCardsStyle.Review}>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -46,18 +67,18 @@ const TourCard = (props) => {
         </div>
         <div className={TourCardsStyle.CountryLocation}>
           <i class="fa-solid fa-location-dot"></i>
-          <p>Europe</p>
+          <p>{props.Content}</p>
         </div>
         <div className={TourCardsStyle.Price}>
-          <p>1,000$</p>
-          <span>1,200$</span>
+          <p>{props.OldPrice}</p>
+          <span>{props.Discount}</span>
         </div>
         <div className={TourCardsStyle.AbouCountry}>
           Nam exercitationem commodi et ducimus quia in dolore animi sit
           mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum
           molestias mollitia et corporis praesentium a laudantium internos.
         </div>
-        <button>Book now</button>
+        <button onClick={OnSubmit}>Book now</button>
       </div>
       {/* </div> */}
     </>

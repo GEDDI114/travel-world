@@ -38,3 +38,47 @@
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .Header {
+    flex-wrap: wrap; /* Allow sections to wrap */
+    height: auto; /* height adjusts */
+    justify-content: center;
+  }
+
+  .headerSection,
+  .headerSection1 {
+    width: 45%; /* 2 sections per row */
+    height: 5rem;
+    margin: 0.3rem 0;
+  }
+
+  .headerSection p,
+  .headerSection1 p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .headerSection,
+  .headerSection1 {
+    width: 100%;
+    height: 4.5rem;
+    margin: 0.2rem 0;
+  }
+
+  .headerSection p,
+  .headerSection1 p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}

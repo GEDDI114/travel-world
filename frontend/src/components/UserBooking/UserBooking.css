@@ -79,3 +79,78 @@
   color: #c0392b;
   transform: scale(1.1);
 }
+
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+}
+
+/* ✅ Responsive for Mobile (phones) */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .sidebar ul li {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+}

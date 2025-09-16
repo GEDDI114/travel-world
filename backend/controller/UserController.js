@@ -15,4 +15,18 @@ const NewRead=async (req,res)=>{
     }
 }
 
-module.exports ={CretateUser,NewRead}
+const NewDelete = async (req, res) => {
+    try {
+        const result = await UserModel.deleteOne({ _id: req.params.id });
+
+        if (result.deletedCount > 0) {
+            res.send("Delete Successful");
+        } else {
+            res.status(404).send("No document found with that ID");
+        }
+    } catch (error) {
+        res.status(500).send("Server error during deletion");
+    }
+};
+
+module.exports ={CretateUser,NewRead,NewDelete}

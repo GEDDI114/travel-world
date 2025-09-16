@@ -213,3 +213,81 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+  .Conatiner {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* CountryAndPrice layout mobile: column instead of row */
+  .CountryAndPrice {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  /* PriceContainer center alignment on mobile */
+  .PriceContainer {
+    justify-content: flex-start;
+  }
+
+  /* Lines container vertical stack */
+  .Lines {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  /* Line1 and Line2 full width on mobile */
+  .Line1, .Line2 {
+    width: 100%;
+  }
+
+  /* GallerySection stack vertically */
+  .GallerySection {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* GalleryContainer full width on mobile */
+  .GalleryContainer {
+    width: 100%;
+    height: auto; /* auto height so images flow naturally */
+  }
+
+  /* GalleryImages adjust for wrapping */
+  .GalleryContainer .GalleryImages {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* Images smaller on mobile */
+  .GalleryContainer .GalleryImages img {
+    width: 100px;
+    height: 90px;
+  }
+
+  /* Adjust text sizes */
+  .CountryrReview h1 {
+    font-size: 1.3rem;
+  }
+  .GalleryContainer .GalleryDescription h1 {
+    font-size: 1.7rem;
+  }
+  .GalleryContainer .GalleryDescription p {
+    font-size: 0.8rem;
+  }
+
+  /* PerCouble smaller */
+  .PerCouble span {
+    font-size: 1.4rem;
+  }
+
+  /* InfoDescription width full on mobile */
+  .InfoDescription {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}

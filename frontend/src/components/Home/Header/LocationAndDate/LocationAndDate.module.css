@@ -49,3 +49,33 @@
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+@media (max-width: 768px) {
+  .container {
+    position: static;
+    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1.2rem;
+    margin: 2rem auto;
+    gap: 1rem;
+    display: none;
+  }
+
+  .container .Description {
+    width: 100%;
+    height: auto;
+  }
+
+  .container button {
+    width: 100%;
+    height: 3.2rem;
+    font-size: 1rem;
+  }
+
+  .container .Description p {
+    margin-left: 0;
+    text-align: left;
+  }
+}

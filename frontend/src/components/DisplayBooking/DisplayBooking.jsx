@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../DisplayBooking/DisplayBooking.css";
-
+import Auth from "../../store/ContextAuth/Auth";
+import { Navigate } from "react-router-dom";
 const DisplayBooking = () => {
+
+  // const navigate = useNavigate()
+
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -16,15 +20,20 @@ const DisplayBooking = () => {
     }
   };
 
+  const ctx = useContext(Auth)
+
   useEffect(() => {
     fetchBookings();
   }, []);
 
-  const addToCart = (item) => {
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    cart.push(item);
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-    alert(`${item.location} added to cart!`);
+  const addToCart = (location, Price) => {
+    const Package = {
+      Country: location,
+      Price : Price
+    }
+
+    ctx.setCurrentBooking(Package)
+    // navigate('./http://localhost:5173/booking')
   };
 
   return (
@@ -36,7 +45,7 @@ const DisplayBooking = () => {
             <h3>{item.location}</h3>
             <p>📅 {item.time} days | 👥 {item.people} People</p>
             <p>Price: ${item.price} <span className="old-price">{item.qiimadhimis}</span></p>
-            <button onClick={() => addToCart(item)}>Book now</button>
+            <button onClick={() => addToCart(item.location, item.price) }>Book now</button>
           </div>
         </div>
       ))}
