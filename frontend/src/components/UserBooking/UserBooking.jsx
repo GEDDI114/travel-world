@@ -36,6 +36,7 @@ const UserBooking = () => {
               <th>Phone</th>
               <th>Emal</th>
               <th>Country</th>
+              {/* <th>price</th> */}
               <th>Number_Of_ticket</th>
              
               <th>Action</th>
@@ -53,6 +54,7 @@ const UserBooking = () => {
                   <td>{item.phone}</td>
                   <td>{item.email}</td>
                   <td>{item.location}</td>
+                  {/* <td>200</td> */}
                   <td>{item.ticket}</td>
                   
                  

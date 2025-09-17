@@ -5,6 +5,7 @@ const UserSchema=mango.Schema({
     phone:{type:Number,required:true},
     email:{type:String,required:true},
     location:{type:String,required:true},
+    price:{type:Number},
     ticket:{type:Number,required:true},
 
 })

@@ -1,29 +1,52 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TourCardsStyle from "./TourCard.module.css";
 import Auth from "../../../../store/ContextAuth/Auth";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AuthUsersContext from "../../../../store/UsersInfo/UsersInfoContext";
 
 
 const TourCard = (props) => {
+
   
 
-  const navigate = useNavigate()
-  const ctx = useContext(Auth)
+  const ctxInfoUsers = useContext(AuthUsersContext);
+
+  console.log(ctxInfoUsers);
+  
+  const navigate = useNavigate();
+
+  const ctx = useContext(Auth);
 
   const OnSubmit = (e) => {
+
     e.preventDefault();
 
-    const NewBooking ={
-      Country : props.country,
-      Price : props.Discount
-    } 
+    console.log(ctxInfoUsers.login);
+    
+    // if (!ctxInfoUsers.login) {
 
-    ctx.setCurrentBooking(NewBooking)
+    //   navigate("./cartPage");
 
-    navigate('./booking')
+    // } 
 
-  }
+    // else {
+
+      const NewBooking = {
+        image : props.background,
+        Country: props.country,
+        Price: props.Discount,
+
+      };
+
+      ctx.setCurrentBooking(NewBooking);
+
+      
+
+      navigate("./booking");
+    // }
+
+  };
 
   return (
     <>
@@ -33,7 +56,10 @@ const TourCard = (props) => {
           className={TourCardsStyle.CardImage}
           style={{ backgroundImage: `url(${props.background})` }}
         >
-          <div className={TourCardsStyle.Country} style={{backgroundImage: `url(${props.logo})`}}></div>
+          <div
+            className={TourCardsStyle.Country}
+            style={{ backgroundImage: `url(${props.logo})` }}
+          ></div>
         </div>
         <div className={TourCardsStyle.PeoplesAndDays}>
           <div className={TourCardsStyle.DaysAndPeople}>
@@ -52,7 +78,7 @@ const TourCard = (props) => {
               width={"23px"}
               height={"25px"}
             />
-            <p>25 Peoples Going</p>
+            <p>{props.peoples} Peoples Going</p>
           </div>
         </div>
         <div className={TourCardsStyle.CountryAndReviews}>

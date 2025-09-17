@@ -13,7 +13,7 @@ const useInput = (validate) => {
 
     const Valid = validate(input)
 
-    // console.log(invalid);
+    // console.log(Valid);
     
 
     const InputHandler = (e) => {

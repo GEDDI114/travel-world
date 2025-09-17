@@ -43,7 +43,7 @@ const TourCards = () => {
     <>
       <div className={PagkageStyle.container}>
         {Pagkages.map((card,idx) => {
-            return <TourCard country={ctx.Countries[idx].countries} OldPrice={ctx.Countries[idx].OldPrice} Discount={ctx.Countries[idx].Discount} background={card.image} logo={card.logo} Content={ctx.Countries[idx].Content} />;
+            return <TourCard country={ctx.Countries[idx].countries} OldPrice={ctx.Countries[idx].OldPrice} Discount={ctx.Countries[idx].Discount} background={card.image} logo={card.logo} Content={ctx.Countries[idx].Content} peoples = {ctx.packages[idx].peoples} />;
         })}
       </div>
     </>

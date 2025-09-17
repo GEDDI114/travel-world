@@ -6,27 +6,38 @@ import Auth from "./Auth";
 const AuthProvider = (props) => {
   const [login, setLogin] = useState(false);
 
-  const [ CurrentBooking, setCurrentBooking] = useState({Country:'Australia',Price :1000})
+  const [CurrentBooking, setCurrentBooking] = useState({
+    id: 1,
+    Country: "Australia",
+    Price: 1000,
+  });
 
   const Countries = [
     {
-      countries: 'Australia',
+      id: 1,
+      countries: "Australia",
       OldPrice: 1000,
-      Discount :  800,
-      Content : 'Australia'
+      Discount: 800,
+      Content: "Australia",
+      peoples: 7,
     },
     {
-      countries: 'Egypt',
+      id: 2,
+      countries: "Egypt",
       OldPrice: 500,
-      Discount :  300,
-      Content : 'Africa'
+      Discount: 300,
+      Content: "Africa",
+      peoples: 2,
     },
+
     {
-      countries: 'Brazil',
+      id: 3,
+      countries: "Brazil",
       OldPrice: 1200,
-      Discount : 1000,
-      Content : 'North America'
-    }
+      Discount: 1000,
+      Content: "North America",
+      peoples: 9,
+    },
   ];
 
   const Admins = [
@@ -56,20 +67,45 @@ const AuthProvider = (props) => {
     },
   ];
 
+  const [packages, setPackages] = useState([
+    { id: 1, peoples: 7 },
+    { id: 2, peoples: 3 },
+    { id: 9, peoples: 9 },
+  ]);
+
+  const PeopleChangeHandler = () => {
+    const FindedIdx = packages.findIndex((pgkage) => {
+      return pgkage.id == CurrentBooking.id;
+    });
+
+    setPackages((prev) => {
+      const updated = prev.map((pkg, index) => {
+        if (index === FindedIdx) {
+          return {
+            ...pkg,
+            peoples: pkg.peoples - 1,
+          };
+        }
+        return pkg;
+      });
+      return updated;
+    });
+  };
+
   const valueProvider = {
     login,
     setLogin,
     Admins,
     Countries,
     CurrentBooking,
-    setCurrentBooking
+    setCurrentBooking,
+    packages,
+    PeopleChangeHandler,
   };
 
   return (
     <>
-      <Auth.Provider value={valueProvider}>
-        {props.children}
-      </Auth.Provider>
+      <Auth.Provider value={valueProvider}>{props.children}</Auth.Provider>
     </>
   );
 };

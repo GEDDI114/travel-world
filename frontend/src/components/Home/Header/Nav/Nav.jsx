@@ -17,9 +17,9 @@ const Nav = () => {
         <Link to="/">  <li>Home</li></Link>
          <Link to="/about" > <li>About Us </li></Link>
          <Link to="/ourpacakge"> <li>Our Packages </li></Link>
-         <Link to="/dashbord" > <li>Dashbord </li> </Link>
+         <Link to="/dash" > <li>Dashbord </li> </Link>
           <Link to="/booking"> <button>Booking</button></Link>
-          {/* <NavLink to="/cartPage" >    <i className="fa-solid fa-home"></i></NavLink> */}
+          <NavLink to="/cartPage" >    <i className="fa-solid fa-home"></i></NavLink>
         </ul>
       </nav>
     </>

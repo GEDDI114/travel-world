@@ -5,52 +5,63 @@ import Auth from "../../../store/ContextAuth/Auth";
 import Login from "../../Login/Login";
 
 const Dashbord = () => {
+  const ctx = useContext(Auth);
 
-
-  const ctx = useContext(Auth)
-
-  
-  
   return (
-    <>
-    { ctx.login ?
-      <div className="dashboard">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <h2>TourAdmin</h2>
-        <ul>
-      <NavLink to="/" >    <li>
-            <i className="fa-solid fa-home"></i> Home
-          </li>
-          </NavLink> 
-          <NavLink to="/TotalBooking">
-          <li>
-            <i className="fa-solid fa-plane"></i> Bookings
-          </li></NavLink>
-          <Link to="/AddBooking">
-            <li>
-              <i className="fa-solid fa-add"></i> Add Booking
-            </li>
-          </Link>
-        <NavLink to="/userBooking" > <li>
-            <i className="fa-solid fa-user"></i> user
-          </li>
-          </NavLink> 
-          <li>
-            <i className="fa-solid fa-dollar-sign"></i> Revenue
-          </li>
-          <li>
-            <i className="fa-solid fa-chart-line"></i> Analytics
-          </li>
-          <li>
-            <button onClick={() => ctx.setLogin(false)}>Logout</button>
-          </li>
-        </ul>
+    <div className="dash">
+      <div className="dash1">
+        <h1>Travel</h1>
       </div>
 
-      <div className="cards"></div>
-    </div> : <Login/>}
-    </>
+      <NavLink
+        to="/dash"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-user"></i>
+        <h4>Dashbord</h4>
+      </NavLink>
+
+      <NavLink
+        to="/TotalBooking"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-user"></i>
+        <h4>Booking</h4>
+      </NavLink>
+
+      <NavLink
+        to="/AddBooking"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-add"></i>
+        <h4>Add Booking</h4>
+      </NavLink>
+      <NavLink
+        to="/userBooking"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-user"></i>
+        <h4>User Booking</h4>
+      </NavLink>
+
+      <NavLink
+        to="/pictures"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-user"></i>
+        <h4>Pictures</h4>
+      </NavLink>
+
+      <NavLink
+        to="/celender"
+        className={({ isActive }) => (isActive ? "dash2 active" : "dash2")}
+      >
+        <i className="fa-solid fa-user"></i>
+        <h4>Celender</h4>
+      </NavLink>
+
+      <button className="btn1">Logo Out</button>
+    </div>
   );
 };
 
